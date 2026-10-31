@@ -1,52 +1,95 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/*
+ * Kristall-Look: Indigo #272F7A als Signature-Farbe, Magenta und Türkis aus dem Logo.
+ * Magenta = geschafft und XP, Türkis = aktuell und richtig. Dunkel ist der Hauptlook.
+ */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --brand: #272f7a;
+  --brand-press: #1b2160;
+  --brand-soft: #e6e7f6;
+  --brand-text: #272f7a;
+  --on-brand: #ffffff;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --crystal: #c42abd;
+  --crystal-text: #a3189c;
+  --crystal-soft: #f7e3f5;
+  --glow: #14b8ad;
+  --glow-text: #0b7e77;
+  --glow-soft: #dcf6f3;
 
-  --vt-c-indigo: #2c3e50;
+  --color-background: #f4f3fb;
+  --color-surface: #ffffff;
+  --color-surface-2: #ebeaf7;
+  --color-border: #dcdcef;
+  --color-border-strong: #bfc0e0;
+  --color-text: #24264a;
+  --color-text-muted: #5f6492;
+  --color-heading: #12143a;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --color-locked-bg: #e3e3f1;
+  --color-locked-text: #8a8db4;
 
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
+  --color-selected: var(--glow);
+  --color-selected-bg: var(--glow-soft);
+  --color-success: #0f9d94;
+  --color-success-bg: #dcf6f3;
+  --color-success-text: #0a6f69;
+  --color-error: #d4304a;
+  --color-error-bg: #fbe4e8;
+  --color-error-text: #b0233a;
+  --color-xp: var(--crystal);
+  --color-xp-text: var(--crystal-text);
 
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --code-bg: #14173a;
+  --code-text: #e6e8ff;
+  --code-keyword: #ff8bd1;
+  --code-string: #f5c46b;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --font-sans: 'Space Grotesk Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, Consolas, monospace;
+  --radius: 2px;
+  --cut: 18px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
+  /* Wiederkehrende Kristall-Formen */
+  --shape-card: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, var(--cut) 100%, 0 calc(100% - var(--cut)));
+  --shape-slant: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  --shape-hex: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --brand: #3a44a8;
+    --brand-press: #272f7a;
+    --brand-soft: #1d2150;
+    --brand-text: #aab1ff;
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+    --crystal: #e04fd6;
+    --crystal-text: #ff8ff2;
+    --crystal-soft: #2a1d4a;
+    --glow: #3fe0d6;
+    --glow-text: #6febe3;
+    --glow-soft: #0f2b3a;
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-background: #0a0b1c;
+    --color-surface: #14173a;
+    --color-surface-2: #1b1f4a;
+    --color-border: #262a5a;
+    --color-border-strong: #3a3f78;
+    --color-text: #dcdff7;
+    --color-text-muted: #9599c8;
+    --color-heading: #ffffff;
+
+    --color-locked-bg: #191c3c;
+    --color-locked-text: #5d6294;
+
+    --color-success: #3fe0d6;
+    --color-success-bg: #0f2b3a;
+    --color-success-text: #6febe3;
+    --color-error: #ff5d73;
+    --color-error-bg: #33142a;
+    --color-error-text: #ff8d9c;
+
+    --code-bg: #07081a;
   }
 }
 
@@ -55,32 +98,53 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
 }
 
 body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  /* Ligaturen aus, sonst sehen =, == und === in JetBrains Mono fast gleich aus */
+  font-variant-ligatures: none;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-heading);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+code,
+kbd {
+  font-family: var(--font-mono);
+}
+
+:focus-visible {
+  outline: 3px solid var(--glow);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
